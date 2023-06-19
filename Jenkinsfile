@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     parameters {
-        string(name: 'CodeCommitURL',defaultValue:"https://git-codecommit.us-west-1.amazonaws.com/v1/repos/naziya" description: 'URL of the CodeCommit repository')
+        string(name: 'CodeCommitURL',defaultValue:"https://github.com/Naziya-26/1CH-Mar-Nodejs/edit/master.git" description: 'URL of the CodeCommit repository')
         string(name: 'ECRAccountID',defaultValue:"630787644279" description: 'AWS ECR Account ID')
         string(name: 'ECRRepository',defaultValue:"app" description: 'Name of the ECR repository')
         string(name: 'ECRRegion', defaultValue:"us-west-1" description: 'AWS region where ECR is located')
@@ -69,7 +69,7 @@ pipeline {
                     sshagent(credentials: ['1CHAdministrator']) {
                         
                     sh """
-                        sshpass -p '${params.SSHPASSWORD}' ssh -p 50022 -o "StrictHostKeyChecking=no" ${params.SSHUSERNAME}@${params.EC2IP} "git clone 'https://git-codecommit.us-west-1.amazonaws.com/v1/repos/naziya'"
+                        sshpass -p '${params.SSHPASSWORD}' ssh -p 50022 -o "StrictHostKeyChecking=no" ${params.SSHUSERNAME}@${params.EC2IP} "git clone 'https://github.com/Naziya-26/1CH-Mar-Nodejs/edit/master.git'"
                         sshpass -p '${params.SSHPASSWORD}' ssh -p 50022 -o "StrictHostKeyChecking=no" ${params.SSHUSERNAME}@${params.EC2IP} "sudo docker login --username AWS --password-stdin ${params.ECRAccountID}.dkr.ecr.${params.ECRRegion}.amazonaws.com/${params.ECRRepository}"
                 
                         sshpass -p '${params.SSHPASSWORD}' ssh -p 50022 -o "StrictHostKeyChecking=no" ${params.SSHUSERNAME}@${params.EC2IP} "sudo kubectl apply -f "$(params.CodeCommitURL)"/deployment.yaml"

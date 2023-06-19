@@ -19,3 +19,6 @@ spec:
           image: 630787644279.dkr.ecr.us-west-1.amazonaws.com/naz:latest
           ports:
             - containerPort: 8080
+            envFrom:
+            - secretRef:
+                name: my-registry-key

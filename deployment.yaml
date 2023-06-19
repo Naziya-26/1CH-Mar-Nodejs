@@ -12,6 +12,8 @@ spec:
       labels:
         app: my-nodejs-app
     spec:
+      imagePullSecrets:
+      - name: my-registry-key
       containers:
         - name: my-nodejs-app
           image: 630787644279.dkr.ecr.us-west-1.amazonaws.com/naz:latest

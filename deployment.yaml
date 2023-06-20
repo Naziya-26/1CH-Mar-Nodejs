@@ -16,8 +16,8 @@ spec:
       
       containers:
         - name: my-nodejs-app
-          image: 630787644279.dkr.ecr.us-west-1.amazonaws.com/naz:latest
+          image: 631847701427.dkr.ecr.us-west-1.amazonaws.com/nodejs:latest
           ports:
             - containerPort: 8080
       imagePullSecrets:
-        - name: my-registry    
+        - name: my-registry.key    

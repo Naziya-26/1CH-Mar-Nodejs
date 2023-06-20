@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-   parameters {
+  parameters {
     string(name: 'CodeCommitURL', defaultValue: "https://github.com/Naziya-26/1CH-Mar-Nodejs.git", description: 'URL of the CodeCommit repository')
     string(name: 'ECRAccountID', defaultValue: "630787644279", description: 'AWS ECR Account ID')
     string(name: 'ECRRepository', defaultValue: "app", description: 'Name of the ECR repository')

@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     parameters {
-        string(name: 'CodeCommitURL',defaultValue:"https://git-codecommit.us-west-1.amazonaws.com/v1/repos/naziya" description: 'URL of the CodeCommit repository')
+        string(name: 'CodeCommitURL',defaultValue:"https://github.com/Naziya-26/1CH-Mar-Nodejs.git" description: 'URL of the CodeCommit repository')
         string(name: 'ECRAccountID',defaultValue:"630787644279" description: 'AWS ECR Account ID')
         string(name: 'ECRRepository',defaultValue:"app" description: 'Name of the ECR repository')
         string(name: 'ECRRegion', defaultValue:"us-west-1" description: 'AWS region where ECR is located')

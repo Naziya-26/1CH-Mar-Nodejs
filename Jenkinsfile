@@ -1,18 +1,18 @@
 pipeline {
     agent any
 
-    parameters {
-        string(name: 'CodeCommitURL',defaultValue:"https://github.com/Naziya-26/1CH-Mar-Nodejs.git" description: 'URL of the CodeCommit repository')
-        string(name: 'ECRAccountID',defaultValue:"630787644279" description: 'AWS ECR Account ID')
-        string(name: 'ECRRepository',defaultValue:"app" description: 'Name of the ECR repository')
-        string(name: 'ECRRegion', defaultValue:"us-west-1" description: 'AWS region where ECR is located')
-        string(name: 'ECRAccessKey',defaultValue:"AKIAZFXO7TN36MRKKZ4A" description: 'AWS access key for ECR')
-        string(name: 'ECRSecretKey',defaultValue:"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" description: 'AWS secret key for ECR')
-        string(name: 'SSHUsername',defaultValue:"1CHAdministrator"description: 'Username for SSH connection to EC2')
-        string(name: 'SSHPassword',defaultValue:"admin" description: 'Password for SSH connection to EC2')
-        string(name: 'EC2IP',defaultValue:"54.183.18.69" description: 'IP address of the EC2 instance')
-        string(name: 'KubernetesDeploymentFile',defaultValue:"naziya/deployment.yaml" description: 'Path to the Kubernetes deployment file')
-    }
+   parameters {
+    string(name: 'CodeCommitURL', defaultValue: "https://github.com/Naziya-26/1CH-Mar-Nodejs.git", description: 'URL of the CodeCommit repository')
+    string(name: 'ECRAccountID', defaultValue: "630787644279", description: 'AWS ECR Account ID')
+    string(name: 'ECRRepository', defaultValue: "app", description: 'Name of the ECR repository')
+    string(name: 'ECRRegion', defaultValue: "us-west-1", description: 'AWS region where ECR is located')
+    string(name: 'ECRAccessKey', defaultValue: "AKIAZFXO7TN36MRKKZ4A", description: 'AWS access key for ECR')
+    string(name: 'ECRSecretKey', defaultValue: "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", description: 'AWS secret key for ECR')
+    string(name: 'SSHUsername', defaultValue: "1CHAdministrator", description: 'Username for SSH connection to EC2')
+    string(name: 'SSHPassword', defaultValue: "admin", description: 'Password for SSH connection to EC2')
+    string(name: 'EC2IP', defaultValue: "54.183.18.69", description: 'IP address of the EC2 instance')
+    string(name: 'KubernetesDeploymentFile', defaultValue: "naziya/deployment.yaml", description: 'Path to the Kubernetes deployment file')
+}
 
     stages {
         

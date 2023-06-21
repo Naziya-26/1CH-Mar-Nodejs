@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: my-nodejs-app
-  namespace: logging
+  namespace: 
 spec:
   replicas: 1
   selector:
@@ -16,7 +16,7 @@ spec:
       
       containers:
         - name: my-nodejs-app
-          image: 631847701427.dkr.ecr.us-west-1.amazonaws.com/nodejs:latest
+          image: 631847701427.dkr.ecr.us-west-1.amazonaws.com/naz:latest
           ports:
             - containerPort: 8080
       imagePullSecrets:
